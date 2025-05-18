@@ -1,0 +1,262 @@
+html, body {
+    font-family: Arial, sans-serif;
+    background: url('/static/images/background-1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1; /* Ensure this layer is behind all other content */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* 50% transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+/* Other existing styles */
+.h1-container {
+    background-color: rgba(243, 238, 222, 0.9); /* Light yellow background with slight transparency */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Rounded corners for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    display: inline-block; /* Keeps the width close to the text content */
+    width: 100%;
+    text-align: center;
+}
+
+.h1-container h1 {
+    color: #472a1adc; /* Dark brown color */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(75, 46, 30, 0.2); /* Adjusted text shadow for a subtle effect */
+    font-family: 'Palatino';
+    font-size: 3em;
+    font-weight: 1000; /* Increased font weight for a bolder look */
+    margin: 0; /* Remove default margin */
+    animation: bounceIn 1s ease;
+}
+
+/* Keyframe for bounceIn animation */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h2 {
+    color: #61322076; /* A darker orange for subheadings */
+    border-bottom: 2px solid #ddd; /* Light border for the heading underline */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    animation: fadeInLeft 0.5s ease;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+li {
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Very light background for list items */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+strong {
+    color: #333; /* Dark color for strong text */
+}
+
+a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #009688; /* Teal color for buttons */
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #472a1adc; /* Darker teal for hover effect */
+}
+
+/* Custom styles for tabs and tab content */
+.nav-tabs .nav-item .nav-link {
+    cursor: pointer;
+    background-color: #f8f9fa; /* Light background for tabs */
+    color: #333; /* Dark text color for tabs */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 900; /* Even bolder font weight */
+    color: #472a1adc !important; /* Dark brown color for text */
+    background-color: rgba(255, 240, 200, 0.9) !important; /* Beige background for active tab */
+    border-color: #3a3513; /* Darker border color to match the theme */
+    border-width: 1px; /* Slightly thicker border to make it stand out */
+}
+
+.tab-content {
+    border: 1px solid #ddd; /* Light border for tab content */
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+    background-color: #fff; /* White background for tab content */
+    padding-top: 20px;
+}
+
+/* Style for the tab panes (day boxes) */
+.tab-pane {
+    padding: 20px;
+    background-color: #f9f9f9; /* Very light background for tab panes */
+    color: #333; /* Dark text color */
+    border-radius: 5px; /* Optional: Rounded corners */
+    border: 1px solid #ddd; /* Optional: Light border around the box */
+    margin-bottom: 20px; /* Space between boxes */
+}
+
+/* Style for the list items within each tab pane */
+.tab-pane ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tab-pane li {
+    background-color: #fcf7d8; /* White background for list items */
+    padding: 10px; /* Padding for list items */
+    border-radius: 3px; /* Optional: Rounded corners for list items */
+    margin-bottom: 10px; /* Space between list items */
+    border: 1px solid #ddd; /* Light border for list items */
+}
+
+.box {
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: rgba(240, 230, 200, 0.9); /* Soft beige color to complement the theme */
+    border: 1px solid #c2b280; /* Light brown border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker box shadow */
+    color: #4b2e1e; /* Dark brown text color */
+}
+
+.box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: rgba(240, 230, 200, 1); /* Slightly less transparent on hover */
+}
+
+.text-content {
+    color: #4b2e1e; /* Ensure the text is dark brown */
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.nav-link {
+    background-color: rgba(235, 220, 180, 0.9); /* A bit darker shade of beige for distinction */
+    border: 1px solid #b5a16a; /* Slightly darker border for days boxes */
+    color: #4b2e1e;
+    padding: 2px 2px; /* Smaller padding to reduce overall size */
+    border-radius: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px; /* Reduced top margin */
+    font-size: 0.9em; /* Slightly smaller font size */
+    text-align: center;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pdf-download-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(88, 30, 30, 0.39);
+}
+
+.pdf-download-container form {
+    margin: 10; /* Ensure the form margin doesn't affect alignment */
+}
+
+/* Update button styles to brown shades */
+.button-container .btn-primary,
+.pdf-download-container .btn-primary {
+    background-color: #6f4e37; /* Medium brown color */
+    color: #fff; /* White text */
+    border: none; /* Remove border if present */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button-container .btn-primary:hover,
+.pdf-download-container .btn-primary:hover {
+    background-color: #5a3e2c; /* Darker brown for hover effect */
+}

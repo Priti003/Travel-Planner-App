@@ -1,0 +1,215 @@
+/* General Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    margin-left: 0;
+}
+
+.container {
+    position: relative;
+    margin-left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background {
+    transform: translateZ(-40px) scale(5.1);
+}
+
+.foreground {
+    transform: translateZ(-20px) scale(3);
+}
+
+.background, .foreground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+h1 {
+    position: fixed;
+    top: 16rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    letter-spacing: 4px;
+    color: white;
+    white-space: nowrap;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Styling */
+section {
+    text-align: justify;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.secHeading {
+    font-size: 4rem;
+    padding: 0 10rem;
+    text-align: center;
+}
+
+.text {
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+/* Background Images */
+.bg {
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.desc {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #333;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    width: 70%;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Updated paths for images */
+.bg1 {
+    background-image: url('/static/images/sport-1.png');
+}
+
+.bg2 {
+    background-image: url('/static/images/sport-2.png');
+}
+
+.bg3 {
+    background-image: url('/static/images/sport-3.avif');
+}
+
+/* Meet the Team Section */
+.team-section {
+    text-align: center;
+    padding: 100px 0;
+    text-align: center;
+    padding: 5rem 0;
+    background-color: #2d2d2d; /* Same as the rest of the section */
+}
+
+.team-heading {
+    text-align: center; /* Center the heading */
+    font-size: 3.5rem;
+    margin: 2rem 0; /* Adjust margins for spacing */
+    color: white;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures image keeps its proportions */
+}
+
+.team-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 5rem; /* Align with the padding used in text */
+}
+
+.team-member {
+    background-color: #faf7f7; /* Slightly lighter than the section */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px); /* Hover effect */
+    background: #fff0c2;
+    border: 50%;
+}
+
+.team-member .team-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: rgb(5, 5, 5);
+}
+
+.team-member .role {
+    font-size: 1em;
+    color: #000000;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #777; /* Default icon color */
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: rgb(8, 8, 8); /* Change icon color on hover */
+}
+
+.social-icon i {
+    font-size: 1.2rem; /* Icon size */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 2rem; /* Reduce padding on small screens */
+    }
+
+    .secHeading, .text {
+        padding: 0 2rem; /* Adjust padding for smaller screens */
+    }
+}
