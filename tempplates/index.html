@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel planner website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="{{ url_for('static', filename='images/p-2.jpg') }}">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- wow js -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lightbox.css') }}">
+    <!-- owl carousel css file  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fakeLoader.min.css') }}">
+
+    <!--Google fonts link for icon-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="wow fadeInDown" data-wow-duration="4s" >
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><img src="{{ url_for('static', filename='images/Trip2.gif') }}" alt="logo"></a>
+
+    
+    <nav class="navbar">
+        <a href="{{ url_for('profile') }}">Profile</a>
+        <a href="#plan-tour-section">Plan Tour</a>
+        <a href="{{ url_for('chatbot') }}">AI Assistant</a>
+        <a href="{{ url_for('logout') }}">Sign Out</a>
+         
+    </nav>
+    
+
+</header>
+<!-- header section ends -->
+
+<!-- chatbot -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content wow fadeInUp" data-wow-duration="4s">
+        
+        <h3><span>Discover Your Next Adventure With AI</span></h3>
+        <p>Personalized itineraries at your fingertip</p>
+        <a href="{{ url_for('discover_more') }}" class="btn">Discover more</a>
+    </div>
+    
+
+    <div class="controls">
+        <span class="vid-btn active" data-src="{{ url_for('static', filename='images/vid-5.mp4') }}"></span>
+<span class="vid-btn" data-src="{{ url_for('static', filename='images/vid-2.mp4') }}"></span>
+<span class="vid-btn" data-src="{{ url_for('static', filename='images/vid-3.mp4') }}"></span>
+<span class="vid-btn" data-src="{{ url_for('static', filename='images/vid-4.mp4') }}"></span>
+<span class="vid-btn" data-src="{{ url_for('static', filename='images/vid-1.mp4') }}"></span>
+
+    </div> 
+
+    <div class="video-container">
+        <video src="{{ url_for('static', filename='images/vid-5.mp4') }}" id="video-slider" loop autoplay muted></video>
+
+    </div> 
+
+</section>
+
+<!-- home section ends -->
+
+<!-- book section starts  -->
+
+<section class="book wow fadeInUp" data-wow-duration="4s" id="plan-tour-section">
+
+    <h1 class="heading">
+        <span>P</span>
+        <span>L</span>
+        <span>A</span>
+        <span>N</span>
+        <span class="space"></span>
+        <span>N</span>
+        <span>O</span>
+        <span>W</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image" data-aos="fade-right" data-aos-offset="10" data-aos-duration="500">
+            <img src="{{ url_for('static', filename='images/book-img.svg') }}" alt="">
+        </div>
+
+        <form method="post" action="/search" data-aos="fade-up" data-aos-offset="40" data-aos-duration="600">
+            <div class="inputBox">
+                <h3>Where To</h3>
+                <input type="text" id="city_name" name="city_name" placeholder="Place Name" required>
+            </div>
+            <div class="inputBox">
+                <h3>Duration</h3>
+                <input type="number" id="duration_days" name="duration_days" placeholder="Days" required>
+            </div>
+            <div class="inputBox">
+                <h3>Budget for Hotels</h3>
+                <input type="number" id="budget" name="budget" placeholder="Budget in Rupees" required>
+            </div>
+            
+            <input type="submit" class="btn btn-submit" value="Plan Tour">
+        </form>
+
+    </div>
+
+</section>
+
+<!-- book section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading wow fadeIn">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-1.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>The journey of a thousand miles begins with a single step.</p>
+                <a href="https://www.google.com/maps/place/Lord+Shiva+Statue/@30.1194012,78.3107495,19.84z/data=!4m6!3m5!1s0x3909163e1e99a3af:0x6f9c5261bdfc2286!8m2!3d30.1194382!4d78.3113281!16s%2Fg%2F119txrgvk?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-2.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>One's destination is never a place, but a new way of seeing things.</p>
+                <a href="https://www.google.com/maps/place/Krabi,+Thailand/@8.0745583,99.0132952,9z/data=!3m1!4b1!4m6!3m5!1s0x30518d792d7f9309:0x10223bc2c364c90!8m2!3d8.1191811!4d99.1013498!16zL20vMDFnOW1m?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-3.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Adventure is out there, and it's calling your name.</p>
+                <a href="https://www.google.com/maps/place/Sri+Arulmigu+Ramanathaswamy+Temple/@9.2679627,79.2810388,13z/data=!4m10!1m2!2m1!1srameshwaram+temple!3m6!1s0x3b01e3dc4949ac6d:0x9ffdab70cc4aa4ba!8m2!3d9.2881136!4d79.3173919!15sChJyYW1lc2h3YXJhbSB0ZW1wbGVaFCIScmFtZXNod2FyYW0gdGVtcGxlkgEMaGluZHVfdGVtcGxlmgEjQ2haRFNVaE5NRzluUzBWSlEwRm5TVVJXY2xrdFdsUlJFQUXgAQA!16s%2Fm%2F026lcs2?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-4.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>The best way to get started is to quit talking and begin doing.</p>
+                <a href="https://www.google.com/maps/place/Buddha+Park/@27.3143623,88.3606956,17z/data=!3m1!4b1!4m6!3m5!1s0x39e69a5613ebf50f:0x77410467216c34cd!8m2!3d27.3143623!4d88.3632705!16s%2Fm%2F0jt0bgl?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-5.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Travel is more than the seeing of sights; it is a change that goes on.</p>
+                <a href="https://www.google.com/maps/place/Christ+Church,+Shimla/@31.1111753,77.1280537,13z/data=!4m10!1m2!2m1!1sshimla+church!3m6!1s0x39057893f4c45e6b:0x10668d6302a9ac90!8m2!3d31.1043145!4d77.1759177!15sCg1zaGltbGEgY2h1cmNoWg8iDXNoaW1sYSBjaHVyY2iSAQZjaHVyY2iaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTmtPRGRJTVhOM1JSQULgAQA!16s%2Fm%2F05pcbb0?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-6.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>Life is either a daring adventure or nothing at all.</p>
+                <a href="https://www.google.com/maps/place/Shore+Temple/data=!4m2!3m1!1s0x3a53acae4b91fd6f:0xaa128d8a959b1141?sa=X&ved=1t:155783&hl=en&gl=GB&ictx=111" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-7.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>The road less traveled is often the most rewarding.</p>
+                <a href="https://www.google.com/maps/place/Mysore+Palace/data=!4m2!3m1!1s0x3baf701103f9a1f9:0xc37fbae2a124da0d?sa=X&ved=1t:155783&hl=en&gl=GB&ictx=111" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-8.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>The world is full of magic things, patiently waiting for our senses to grow sharper.</p>
+                <a href="https://www.google.com/maps/place/Sandakphu+West+Bengal/@27.1054791,87.9989735,17z/data=!3m1!4b1!4m6!3m5!1s0x39e5d9689e7059f1:0x2442ff5124f53da9!8m2!3d27.1054791!4d88.0015484!16s%2Fg%2F11qg47d6_v?hl=en&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box wow fadeInUp" data-wow-duration="2s">
+            <img src="{{ url_for('static', filename='images/g-9.jpg') }}" alt="">
+            <div class="content">
+                <h3>amazing places</h3>
+                <p>The best way to get started is to quit talking and begin doing.</p>
+                <a href="https://www.google.com/maps/place/Thar+Desert/data=!4m2!3m1!1s0x39470bd5c24347d1:0x54f658627a3fb418?sa=X&ved=1t:155783&hl=en&gl=GB&ictx=111" class="btn">see more</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<section class="brand-container">
+
+    <div class="swiper-container brand-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Brand 1"></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Brand 2"></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Brand 3"></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='images/4.jpg') }}" alt="Brand 4"></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='images/5.jpg') }}" alt="Brand 5"></div>
+            <div class="swiper-slide"><img src="{{ url_for('static', filename='images/6.jpg') }}" alt="Brand 6"></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- footer section starts  -->
+
+<footer class="footer">
+   <br>
+    <div class="box-container">
+        <div class="box about-us">
+            <h3>About Us</h3>
+            <p>Welcome to TripGenie, your ultimate companion for seamless travel planning! Whether you're a seasoned globetrotter or embarking on your first adventure, our app is designed to make your travel experience stress-free and enjoyable.The system ensures that no matter how spontaneous or detailed your travel plans are, everything is organized and aligned with your goals. Whether you're craving relaxation or thrill-seeking adventures, our app provides a stress-free way to plan your perfect trip, leaving you free to enjoy every moment of the experience.</p>
+        </div>
+
+        <!--<div class="box quick-links">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Book</a>
+            <a href="#">Gallery</a>
+            <a href="#">Contact</a>
+        </div> -->
+
+        <div class="box">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/TheTravelPlanner1/"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://x.com/tripplannerai"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://www.instagram.com/trip_planner_/?hl=en"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.youtube.com/channel/UCSOmYe2OiWEtRSbXpw0tm4w"><i class="fab fa-youtube"></i> YouTube</a>
+        </div>
+    </div>
+
+    <!-- Message icon link -->
+    <div class="message-icon">
+        <a href="/chatbot">
+            <img src="https://cdn-icons-png.flaticon.com/512/6014/6014401.png" alt="Message Icon" width="60" height="60">
+        </a>
+    </div>
+    
+
+    <div class="credit">Created by <span>Codecrafts</span> | All rights reserved</div>
+
+</footer>
+
+<!-- footer section ends -->
+
+
+<!-- chatbox -->
+
+<!-- chat -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script type="module" src="{{ url_for('static', filename='js/aos.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/jquery.totop.js') }}"></script>
+<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fakeLoader.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/lightbox.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<script type="module" src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+
+
+</body>
+</html>

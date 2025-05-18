@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plan.css') }}">
+    <!-- Include Bootstrap CSS (Optional) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tab-content {
+            padding: 20px;
+        }
+        .nav-tabs .nav-item .nav-link {
+            cursor: pointer;
+        }
+        .tab-pane ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tab-pane li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="h1-container">
+            <h1>Places to Visit in {{ city_name }}</h1>
+        </div>
+        <p><strong>Description:</strong> {{ city_desc }}</p>
+        <p><strong>Ideal Duration:</strong> {{ ideal_duration }}</p><br>
+
+        <!-- Add the Recommended Hotel Section -->
+        <div class="hotel-recommendation">
+            <h3>Recommended Hotel</h3>
+            {% if recommended_hotel %}
+                <p><strong>Hotel Name:</strong> {{ recommended_hotel }}</p>
+            {% else %}
+                <p>No hotel recommendation available for this city and price.</p>
+            {% endif %}
+        </div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" id="day-tabs" role="tablist">
+            {% for day in range(duration_days) %}
+                <li class="nav-item">
+                    <a class="nav-link {% if loop.index == 1 %}active{% endif %}" id="day{{ loop.index }}-tab" data-toggle="tab" href="#day{{ loop.index }}" role="tab" aria-controls="day{{ loop.index }}" aria-selected="{% if loop.index == 1 %}true{% else %}false{% endif %}">Day {{ loop.index }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content" id="day-tabs-content">
+            {% for day_places in places %}
+                <div class="tab-pane fade {% if loop.index == 1 %}show active{% endif %}" id="day{{ loop.index }}" role="tabpanel" aria-labelledby="day{{ loop.index }}-tab">
+                    <ul>
+                        {% for place in day_places %}
+                            <li>
+                                <strong>{{ place['Place'] }}</strong><br>
+                                Description: {{ place['Place_desc'] }}<br>
+                                Ratings: {{ place['Ratings'] }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="button-container">
+            <form action="{{ url_for('save_plan') }}" method="post">
+                <input type="hidden" name="city_name" value="{{ city_name }}">
+                <input type="hidden" name="city_desc" value="{{ city_desc }}">
+                <input type="hidden" name="duration_days" value="{{ duration_days }}">
+                {% for day_places in places %}
+                    {% for place in day_places %}
+                        <input type="hidden" name="places[]" value="{{ place['Place'] }}">
+                    {% endfor %}
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Save</button>
+                
+            </form>
+            <div class="pdf-download-container">
+                <form action="{{ url_for('download_pdf') }}" method="post">
+                    <input type="hidden" name="city_name" value="{{ city_name }}">
+                    <input type="hidden" name="city_desc" value="{{ city_desc }}">
+                    <input type="hidden" name="duration_days" value="{{ duration_days }}">
+                    {% for day_places in places %}
+                        {% for place in day_places %}
+                            <input type="hidden" name="places[]" value="{{ place['Place'] }}">
+                        {% endfor %}
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Download PDF</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

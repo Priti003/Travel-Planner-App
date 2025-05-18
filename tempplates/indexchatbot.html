@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <!-- Link to custom CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="chat-container z-depth-5">
+      <div class="header">
+        <h1>
+          <span class="gradient-text">TravoBot</span>
+          <img
+            src="https://img.freepik.com/free-vector/chatbot-chat-message-vectorart_78370-4104.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724803200&semt=ais_hybrid"
+            alt="Profile Image"
+            class="profile-image"
+          />
+        </h1>
+      </div>
+      <div id="chat-box" class="chat-box"></div>
+      <div class="input-group">
+        <input type="text" id="user-input" placeholder="   Type a message..." />
+        <button id="send-btn" class="btn purple darken-4" style="height: 40px">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+        <button id="speak-btn" class="btn purple darken-4" style="height: 40px">
+          <i class="fas fa-microphone"></i>
+        </button>
+       
+     
+
+
+      </div>
+    </div>
+    <footer class="footer">
+      <p>
+        &copy; All rights reserved. Chatbot by CodeCrafts
+      </p>
+    </footer>
+    <script type="module" src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

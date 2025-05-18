@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover More</title>
+    
+    <!-- Link to CSS using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/discover_more.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <!-- Update image links using url_for -->
+            <img src="{{ url_for('static', filename='images/background_discover.png') }}" alt="bg" class="background">
+            <!-- <img src="{{ url_for('static', filename='foreground.png') }}" alt="fg" class="foreground"> -->
+            <h1>Welcome To TripGenie !</h1>
+        </div>
+
+        <section>
+            <h2 class="secHeading">Start Your Adventure Today!!</h2>
+            <p class="text">
+                Welcome to our AI-powered travel planner, your ultimate companion for crafting the perfect getaway, whether it's a quick weekend escape or a once-in-a-lifetime adventure. We understand that the process of planning a trip can often feel overwhelming, with countless details to manage, from selecting the perfect destination to arranging accommodations and activities. That's why we've designed a user-friendly web app that takes the stress out of travel planning. Our intelligent system guides you every step of the way, making the experience both enjoyable and efficient. With just a few clicks, you can set your destination, travel dates, duration, and budget, and our app will generate a personalized itinerary tailored precisely to your preferences.
+            <br><br>
+            At our core, we are passionate about making travel accessible, enjoyable, and hassle-free for everyone. Join us, and let’s make your next trip unforgettable!
+            </p>
+
+            <div class="bg bg1">
+                <h3 class="desc">Effortless Trip Itineraries</h3>
+            </div>
+            <p class="text">
+                Our app makes trip planning effortless, allowing you to easily set your travel destination, arrival and departure dates, trip duration, and budget. With just a few clicks, our intelligent system generates personalized itineraries tailored to your preferences, ensuring that every detail of your trip is perfectly planned. Whether you're seeking a quick weekend getaway or an extended month-long adventure, our app takes the guesswork out of planning by curating ideal activities, destinations, and experiences. From adventurous excursions and hidden gems to cultural landmarks and dining recommendations, every part of your journey is thoughtfully crafted to meet your desires.
+            <br><br>
+            The system ensures that no matter how spontaneous or detailed your travel plans are, everything is organized and aligned with your goals. Whether you're craving relaxation or thrill-seeking adventures, our app provides a stress-free way to plan your perfect trip, leaving you free to enjoy every moment of the experience.
+            </p>
+            <div class="bg bg2">
+                <h2 class="desc">Convenient Trip Organization</h2>
+            </div>
+            <p class="text">
+                To make your travel planning even more convenient, we offer the option to download a detailed PDF of your trip itinerary. This way, you can have all your plans neatly organized and accessible at any time, whether you’re online or offline.
+            <br><br>
+            We also understand that finding the right accommodation is crucial to a successful trip. That’s why we recommend the best hotel facilities that match your needs and budget, ensuring you have a comfortable stay wherever you go.
+            </p>
+            <div class="bg bg3">
+                <h2 class="desc">Personalized Assistance</h2>
+            </div>
+            <p class="text">
+                Our app doesn't stop at just planning your trip; it takes travel convenience to the next level by including an AI-powered chatbot, available to assist you at every stage of your journey. Whether you're still brainstorming destinations, need advice on local attractions, or face unexpected travel changes, our chatbot is your go-to guide. Designed to provide instant, personalized assistance, it can answer any questions you may have, suggest activities based on your interests, and even help with practical needs like finding directions or locating nearby services. It’s like having a personal travel assistant in your pocket, ready to support you 24/7, ensuring that your journey is as smooth and enjoyable as possible.
+            <br><br>
+            At the heart of our app is a deep passion for making travel more accessible, enjoyable, and hassle-free for everyone. We understand that travel can be complicated, and that’s why our AI tools work tirelessly to eliminate the stress from planning and navigating your trips. With our intuitive design and ever-ready chatbot, you’ll feel confident and supported from the moment you begin planning until you return home with incredible memories. Whether you're an experienced traveler looking for expert recommendations or a first-timer seeking guidance, our platform is built to enhance your travel experience. So, join us, and let's make your next trip unforgettable, turning your dream vacation into a reality with ease.
+            </p>
+        <!-- Meet the Team starts here -->
+    <h2 class="secHeading">Meet Our Team</h2>
+    <p class="text">"Our dedicated team is here to ensure that every aspect of your travel planning experience is not only seamless but also enjoyable. We are committed to providing personalized support and expert advice to make sure every detail of your trip is perfectly tailored to your needs and preferences. From the initial planning stages to your final destination, we’re here to assist you every step of the way."</p>
+    
+    <div class="team-container">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/img1_discover.jpeg') }}" alt="Walter White" class="team-img">
+            <h3>Hridita Biswas</h3>
+            <p class="role">Frontend Developer</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/trip_planner_/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/TheTravelPlanner1/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/tripplannerai" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/trip-planner-ai/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/img2_discover.jpeg') }}" alt="Sarah Jhonson" class="team-img">
+            <h3>Krittika Chatterjee</h3>
+            <p class="role">Backend Developer</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/trip_planner_/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/TheTravelPlanner1/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/tripplannerai" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/trip-planner-ai/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/img3_discover.jpeg') }}" alt="William Anderson" class="team-img">
+            <h3>Priti Jana</h3>
+            <p class="role">Data Scientist</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/trip_planner_/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/TheTravelPlanner1/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/tripplannerai" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/trip-planner-ai/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/img4_discover.jpeg') }}" alt="Amanda Jepson" class="team-img">
+            <h3>Joyeta Senapati</h3>
+            <p class="role">Cloud Engineer</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/trip_planner_/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/TheTravelPlanner1/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/tripplannerai" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/trip-planner-ai/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- End of Meet the Team -->
+</section>
+    
+</body>
+</html>

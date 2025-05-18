@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plan.css') }}">
+    <!-- Include Bootstrap CSS (Optional) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-container {
+            padding: 20px;
+        }
+        .plan-list {
+            margin-top: 20px;
+        }
+        .plan-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .go-back-btn {
+            position: absolute;
+            top: 10px;
+            right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container profile-container">
+        <a href="{{ url_for('home') }}" class="btn btn-secondary go-back-btn">Go Back</a>
+        <h1>User Profile</h1>
+        <p><strong>Name:</strong> {{ user_name }}</p>
+        <p><strong>Email:</strong> {{ user_email }}</p>
+
+        <div class="plan-list">
+            <h3>Saved Plans</h3>
+            {% if saved_plans %}
+                <ul>
+                    {% for plan in saved_plans %}
+                        <li class="plan-item">
+                            <h4>{{ plan.city_name }}</h4>
+                            <p><strong>Description:</strong> {{ plan.city_desc }}</p>
+                            <p><strong>Duration:</strong> {{ plan.duration_days }} days</p>
+                            <p><strong>Places:</strong></p>
+                            <ul>
+                                {% for place in plan.places %}
+                                    <li>{{ place }}</li>
+                                {% endfor %}
+                            </ul>
+                            <!-- Add the delete button -->
+                            <form action="{{ url_for('delete_plan', plan_id=plan.id) }}" method="post" class="delete-btn">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No saved plans available.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
